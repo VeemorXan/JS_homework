@@ -44,24 +44,24 @@ if (degree<-30) {
 // (admin, manager, user ...), выводить на экран информацию о пользователе
 // (информацию любого типа, роль, дату рождения, любимый напиток и тд).
 
-const typeUser = 'admin' // user, manager 
+const typeUser = 'user' // user, manager 
 
 const admin = {
-    role: "Администратор"
-    birthday: "20 июня"
+    role: "Администратор",
+    birthday: "20 июня",
     favoriteDrink: "Pepsi"
 }
 
 const user = {
-    role: "Администратор"
-    birthday: "20 июня"
-    favoriteDrink: "Pepsi"
+    role: "Пользователь",
+    birthday: "15 июня",
+    favoriteDrink: "Cola"
 }
 
-const user = {
-    role: "Администратор"
-    birthday: "20 июня"
-    favoriteDrink: "Pepsi"
+const manager = {
+    role: "Менеджер",
+    birthday: "10 июня",
+    favoriteDrink: "Fanta"
 }
 
 switch (typeUser) {
@@ -69,12 +69,55 @@ switch (typeUser) {
         console.log(admin);
         break;
     case 'user':
-        console.log('Вы пользователь');
+        console.log(user);
         break;
     case 'manager':
-        console.log('Вы гость');
+        console.log(manager);
         break;
     default:
         console.log('Неизвестный тип пользователя');
         break;
 }
+
+// Решить следующие задачи с использованием циклов while и for.
+// ● Вывести в консоль заданную строку N раз.
+
+// При N = 4:
+for(let i=0;i<4;i++) {
+    console.log(i + ' Заданная строка');
+}
+
+// Ежедневно количество доступных автомобилей в салоне уменьшается в два
+// раза. Выяснить, на какой день продаж, количество доступных к покупке авто
+// станет меньше M, если известно, что в первый день продаж всего было N
+// автомобилей.
+
+let M = 54;
+let days = 0;
+
+for (let N = 652; N>M; N=N/2){
+    days++
+}
+    console.log(`Количество дней: ${days}`);
+
+//     Проанализировав временной промежуток начиная с 1800 и до 2020 года найти
+// и вывести в консоль:
+// ○ Год первого полета человека в космос и количество итераций которое потребовалось для поиска.
+
+
+let iterationsKosmo = 0;
+for (let year = 1800; year <=2020; year++){
+    iterationsKosmo++
+    if (year == 1961) break;
+}
+    console.log(`Количество итераций: ${iterationsKosmo}`);
+
+// ○ Количество високосных годов принадлежащих данному отрезку и количество итераций которое
+// потребовалось для поиска.
+let iterationsLeap = 0;
+for (let year = 1800; year <=2020; year = year+4){
+    iterationsLeap++
+    if (year == 1800) continue;
+    if (year == 1900) continue;
+}
+    console.log(`Количество итераций: ${iterationsLeap}`);
